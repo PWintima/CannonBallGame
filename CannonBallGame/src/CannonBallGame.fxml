@@ -4,51 +4,62 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<Pane fx:id="shootCannonArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#fireCannonBall" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CannonBallGameController">
+<Pane fx:id="shootCannonArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#fireCannonBall" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CannonBallGameController">
    <children>
-      <HBox prefHeight="32.0" prefWidth="155.0">
+      <Circle layoutX="-11.0" layoutY="282.0" radius="61.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="cannonBarrel" arcHeight="5.0" arcWidth="5.0" height="55.0" layoutX="-1.0" layoutY="255.0" onMouseMoved="#aimCannon" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+      <Rectangle fx:id="yellowTarget3" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="130.0" layoutX="547.0" layoutY="137.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="blocker" arcHeight="5.0" arcWidth="5.0" height="130.0" layoutX="231.0" layoutY="170.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="blueTarget4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="814.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="blueTarget2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="445.0" layoutY="121.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="yellowTarget4" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="130.0" layoutX="700.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="blueTarget1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="363.0" layoutY="212.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="blueTarget3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="633.0" layoutY="277.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="yellowTarget1" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="130.0" layoutX="304.0" layoutY="326.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Rectangle fx:id="yellowTarget2" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="130.0" layoutX="491.0" layoutY="300.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+      <Circle fx:id="cannonBall" layoutX="26.0" layoutY="283.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="upperBound" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="11.0" layoutX="136.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="765.0" />
+      <Rectangle fx:id="LowerBound" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="11.0" layoutX="197.0" layoutY="488.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="700.0" />
+      <HBox layoutX="7.0" layoutY="477.0" prefHeight="18.0" prefWidth="86.0">
          <children>
-            <VBox prefHeight="26.0" prefWidth="92.0">
-               <children>
-                  <Label text="Time remaining: " />
-               </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </VBox>
-            <Label fx:id="timeLabel" text="0 " />
-            <Label text=" seconds" />
-         </children>
-         <padding>
-            <Insets left="5.0" top="5.0" />
-         </padding>
-      </HBox>
-      <Circle layoutX="-14.0" layoutY="221.0" radius="61.0" stroke="BLACK" strokeType="INSIDE" />
-      <Rectangle fx:id="cannonBarrel" arcHeight="5.0" arcWidth="5.0" height="55.0" layoutX="-4.0" layoutY="194.0" onMouseMoved="#aimCannon" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-      <Rectangle fx:id="yellowTarget3" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="91.0" layoutX="436.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="blocker" arcHeight="5.0" arcWidth="5.0" height="153.0" layoutX="189.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="blueTarget4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="91.0" layoutX="559.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="blueTarget2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="91.0" layoutX="350.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="yellowTarget4" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="91.0" layoutX="509.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="blueTarget1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="91.0" layoutX="289.0" layoutY="176.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="blueTarget3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="91.0" layoutX="477.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="yellowTarget1" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="91.0" layoutX="245.0" layoutY="282.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Rectangle fx:id="yellowTarget2" arcHeight="5.0" arcWidth="5.0" fill="#fff71f" height="91.0" layoutX="372.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
-      <Circle fx:id="cannonBall" layoutX="23.0" layoutY="222.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
-      <HBox layoutY="374.0" prefHeight="26.0" prefWidth="122.0">
-         <children>
-            <Label text="Score: " />
-            <Label fx:id="scoreLabel" text="0 " />
+            <Label text="Score: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="score" text="0 ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
          </children>
          <padding>
             <Insets left="5.0" />
          </padding>
       </HBox>
-      <Rectangle fx:id="upperBound" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="11.0" layoutX="157.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="540.0" />
-      <Rectangle fx:id="LowerBound" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="11.0" layoutX="127.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="570.0" />
+      <HBox layoutX="7.0" layoutY="5.0" prefHeight="18.0" prefWidth="145.0">
+         <children>
+            <Label text="Time Remaining:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="time" text="0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="122.0" layoutY="5.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

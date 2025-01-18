@@ -11,9 +11,7 @@ public class CannonBallGame extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("CannonBallGame.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(
-        		getClass().getResource("Cannon.css").toExternalForm
-        		()); // dynamically calling css file from the main
+      
         stage.setTitle("Cannon App");
         stage.setScene(scene);
         stage.show();
